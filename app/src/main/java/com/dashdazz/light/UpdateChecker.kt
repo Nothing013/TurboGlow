@@ -20,9 +20,9 @@ import org.json.JSONObject
 object UpdateChecker {
 
     private const val TAG = "TurboGlowUpdate"
-    // A fork must point this at its own public repository before enabling OTA updates.
-    // Keeping the original project URL here would offer unrelated APKs to TurboGlow users.
-    private const val REPO = ""
+    // TurboGlow's own public release channel. Downloaded APKs are still
+    // verified against the installed signing certificate before installation.
+    private const val REPO = "Nothing013/TurboGlow"
     private const val API_LATEST = "https://api.github.com/repos/$REPO/releases/latest"
     private const val ASSET_NAME = "TurboGlow-release.apk"
     private const val DOWNLOAD_URL = "https://github.com/$REPO/releases/download"
@@ -81,7 +81,6 @@ object UpdateChecker {
     }
 
     suspend fun check(context: Context): UpdateStatus = withContext(Dispatchers.IO) {
-        if (REPO.isBlank()) return@withContext UpdateStatus.Failed("not_configured")
         try {
             val conn = URL(API_LATEST).openConnection() as HttpURLConnection
             var status: UpdateStatus

@@ -39,9 +39,8 @@ new signing key configured in `local.properties`; never commit that key.
 
 ## Publishing this fork
 
-The in-app updater is intentionally disabled until this repository has its
-own GitHub Releases endpoint. Set the `REPO` constant in `UpdateChecker.kt`
-to `owner/repository` only after publishing signed releases from this fork.
+The in-app updater uses this repository's GitHub Releases endpoint. It will
+only offer an APK signed with the same certificate as the installed app.
 
 Generate a TurboGlow-specific signing key and configure these GitHub Actions
 secrets before publishing: `TURBOGLOW_KEYSTORE_BASE64`,
