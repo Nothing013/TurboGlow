@@ -34,9 +34,9 @@ import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 import top.yukonga.miuix.kmp.basic.Card
 import top.yukonga.miuix.kmp.basic.Slider
-import top.yukonga.miuix.kmp.basic.SuperArrow
-import top.yukonga.miuix.kmp.basic.SuperSwitch
 import top.yukonga.miuix.kmp.basic.Text
+import top.yukonga.miuix.kmp.extra.SuperArrow
+import top.yukonga.miuix.kmp.extra.SuperSwitch
 import top.yukonga.miuix.kmp.theme.MiuixTheme
 
 @Composable
